@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Summary</title>
+    <meta
+      name="description"
+      content="Search any GitHub username and view a clean portfolio-style profile summary."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="panel hero">
+        <div>
+          <p class="eyebrow">GitHub profile</p>
+          <h1>Profile Summary</h1>
+          <p class="subtitle">
+            Explore a GitHub profile with a clean, Vercel-ready dashboard.
+          </p>
+        </div>
+
+        <form id="search-form" class="search-bar">
+          <input
+            id="username"
+            type="text"
+            value="fnaoto"
+            aria-label="GitHub username"
+            placeholder="Enter a GitHub username"
+          />
+          <button type="submit">View profile</button>
+        </form>
+      </section>
+
+      <section id="error-panel" class="panel error-panel hidden">
+        <strong>Unable to load profile</strong>
+        <p id="error-message"></p>
+      </section>
+
+      <section id="profile" class="hidden">
+        <section class="panel profile-header">
+          <img id="avatar" alt="Profile avatar" class="avatar" />
+          <div>
+            <h2 id="name"></h2>
+            <p id="handle" class="handle"></p>
+            <p id="bio" class="bio"></p>
+          </div>
+          <a id="github-link" target="_blank" rel="noreferrer" class="cta-link">View on GitHub</a>
+        </section>
+
+        <section class="stats-grid">
+          <div class="stat-card">
+            <span>Public repos</span>
+            <strong id="public-repos"></strong>
+          </div>
+          <div class="stat-card">
+            <span>Followers</span>
+            <strong id="followers"></strong>
+          </div>
+          <div class="stat-card">
+            <span>Following</span>
+            <strong id="following"></strong>
+          </div>
+          <div class="stat-card">
+            <span>Total stars</span>
+            <strong id="total-stars"></strong>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-header">
+            <h3>Top languages</h3>
+          </div>
+          <div id="languages" class="chip-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-header">
+            <h3>Recent repositories</h3>
+          </div>
+          <div id="repos" class="repo-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
